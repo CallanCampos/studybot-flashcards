@@ -29,7 +29,7 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn app:app --reload
-cd studybot-frontend
+cd flashcard-frontend
 npm run dev
 ```
 
