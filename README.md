@@ -79,6 +79,12 @@ Tailwind config is already wired up; the dark-mode state syncs to `<html>`.
 
 ---
 
+## Limitations
+
+Currently, the study bot only looks for sentences that contain definitional phrases like "X is Y" or "X are Y". These often indicate a flashcard-worthy fact (where X is a concept and Y is an explanation or definition).
+
+---
+
 ## 🤝  Contributing
 
 1. Fork the repo and create your branch: `git checkout -b feature/my-idea`
