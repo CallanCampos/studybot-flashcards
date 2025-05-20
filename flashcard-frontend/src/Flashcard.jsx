@@ -1,16 +1,55 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiRotateCw } from "react-icons/fi";
 
 export default function Flashcard({ q, a }) {
-  const [show, setShow] = useState(false);
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  const flip = {
+    hidden: { rotateY: 180, opacity: 0 },
+    visible: { rotateY: 0, opacity: 1 },
+  };
+
   return (
     <div
-      className="bg-white shadow-lg rounded-2xl p-6 cursor-pointer transform
-                 hover:scale-[1.02] transition"
-      onClick={() => setShow((s) => !s)}
+      className="perspective-[1000px] cursor-pointer select-none"
+      onClick={() => setShowAnswer((s) => !s)}
     >
-      <p className="font-semibold">{q}</p>
-      {show && <p className="mt-2 text-gray-700">{a}</p>}
-      {!show && <p className="mt-2 text-blue-500 italic">Click to reveal answer</p>}
+      <AnimatePresence mode="wait" initial={false}>
+        {!showAnswer ? (
+          <motion.div
+            key="question"
+            variants={flip}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            transition={{ duration: 0.4 }}
+            className="glass p-8 h-48 flex flex-col justify-center items-center"
+          >
+            <p className="text-lg font-semibold">{q}</p>
+            <p className="mt-3 text-primary-600 flex items-center gap-1">
+              Click to reveal <FiRotateCw className="inline" />
+            </p>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="answer"
+            variants={flip}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            transition={{ duration: 0.4 }}
+            className="glass p-8 h-48 flex flex-col justify-center items-center"
+          >
+            <p className="text-primary-600 mb-2 uppercase tracking-wide text-sm">
+              Answer
+            </p>
+            <p className="text-lg leading-snug text-center whitespace-pre-wrap">
+              {a}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

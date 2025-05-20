@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* page background */
+body {
+  @apply bg-gradient-to-b from-primary-50 via-purple-50 to-pink-50
+         dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900;
+  @apply text-gray-800 dark:text-gray-100;
+  font-family: theme("fontFamily.display");
+  -webkit-font-smoothing: antialiased;
+}
+
+/* convenient utility so cards pop */
+.glass {
+  @apply bg-white/40 dark:bg-zinc-800/40
+         backdrop-blur-md rounded-3xl shadow-glass border border-white/30;
+}
