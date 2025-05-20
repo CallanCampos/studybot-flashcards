@@ -16,26 +16,6 @@ Upload a **PDF, DOCX, or TXT** file → StudyBot extracts the text, runs an AI q
 
 ---
 
-## 🚀  Quick Start (Docker)
-
-```bash
-# clone the repo
-git clone https://github.com/CallanCampos/studybot-flashcards.git
-cd studybot-flashcards
-
-# build and run (back-end + model included)
-docker build -t studybot .
-docker run -p 8000:8000 studybot
-````
-
-Visit **`http://localhost:5173`** in a second terminal:
-
-```bash
-cd client
-npm install
-npm run dev
-```
-
 Upload a file, click **Generate flashcards**, and start studying!
 
 ---
