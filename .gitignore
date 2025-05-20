@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.cache/
+# Node
+flashcard-frontend/node_modules/
+flashcard-frontend/dist/
+# OS cruft
+.DS_Store

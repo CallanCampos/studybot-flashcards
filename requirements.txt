@@ -1,0 +1,4 @@
+transformers==4.28.1       # Hugging Face Transformers for the QA model
+torch==2.0.0               # PyTorch (backend for Transformers model)
+pdfplumber==0.9.0          # PDF text extraction
+python-docx==0.8.11        # DOCX file parsing
